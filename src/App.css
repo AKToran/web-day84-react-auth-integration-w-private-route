@@ -6,3 +6,8 @@
   margin: 0 auto;
 }
 
+.active{
+  background-color: rgb(230, 239, 239);
+  color: black;
+  font-weight: 600;
+}
