@@ -20,12 +20,26 @@ const Nav = () => {
       <li>
         <NavLink to={"/"}>Home</NavLink>
       </li>
-      <li>
-        <NavLink to={"/login"}>Login</NavLink>
-      </li>
-      <li>
-        <NavLink to={"/register"}>Register</NavLink>
-      </li>
+      {!user && (
+        <>
+          <li>
+            <NavLink to={"/login"}>Login</NavLink>
+          </li>
+          <li>
+            <NavLink to={"/register"}>Register</NavLink>
+          </li>
+        </>
+      )}
+      {user && (
+        <>
+          <li>
+            <NavLink to={"/profile"}>Profile</NavLink>
+          </li>
+          <li>
+            <NavLink to={"/orders"}>Orders</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
 
