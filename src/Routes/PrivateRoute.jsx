@@ -3,9 +3,15 @@ import { AuthContext } from "../Contexts/AuthContext";
 import { Navigate, useLocation } from "react-router";
 
 const PrivateRoute = ({ children }) => {
-  const { user } = use(AuthContext);
+  const { user, loading } = use(AuthContext);
 
   let location = useLocation();
+
+
+  if(loading){
+    return <span className="my-8 loading loading-infinity loading-xl"></span>
+  }
+
   
 
   if (!user) {
